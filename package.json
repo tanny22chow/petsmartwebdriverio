@@ -1,0 +1,14 @@
+{
+  "name": "petsmartwebdriverio",
+  "type": "module",
+  "devDependencies": {
+    "@wdio/local-runner": "^8.39.1",
+    "@wdio/mocha-framework": "^8.39.0",
+    "@wdio/spec-reporter": "^8.39.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "scripts": {
+    "wdio": "npx wdio run ./wdio.conf.ts"
+  }
+}

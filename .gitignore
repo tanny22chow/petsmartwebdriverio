@@ -1,0 +1,11 @@
+.idea
+.DS_Store
+node_modules/
+npm-debug.log
+src/reports
+src/reports/accessibility
+src/reports/allure-results
+src/reports/errorShots
+src/reports/json-results
+allure-report/
+allure-results/
