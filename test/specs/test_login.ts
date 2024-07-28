@@ -6,7 +6,7 @@ import { LandingPage } from '../pageobjects/landingpage.ts'
 describe('Login feature', () => {
     let lpage:LandingPage;
     before('Page object creation',async()=>{
-         lpage= new LandingPage(browser);
+         
     })
     beforeEach('page creation',async()=>{
        await  browser.url('/');
@@ -21,6 +21,7 @@ describe('Login feature', () => {
     
 
     it('should login with valid credential', async () => {
+     lpage= new LandingPage(browser);
     await lpage.clickloginlink()
     })
 })

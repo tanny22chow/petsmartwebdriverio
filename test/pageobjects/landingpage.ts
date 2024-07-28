@@ -27,8 +27,10 @@ export class LandingPage {
         }
     }
     clickloginlink() {
-         this.webelements.loginlink.click()
-         
+         this.webelements.loginlink.click().then(()=>{
+            console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
+         })
+    //   this.bs.execute(`$(${this.locators.loginlink}).click()`)
     }
 }
 
