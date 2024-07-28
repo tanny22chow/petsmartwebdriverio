@@ -5,6 +5,8 @@ export const config: Options.Testrunner = {
     // Runner Configuration
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
+    user: 'tanmoy22chowdhury',
+    key: 'LT02eKkyC2xEKfgef4KksVdYqMiMZbQGywnZSB29rZ7WkWE2Ld',
     runner: 'local',
     autoCompileOpts: {
         autoCompile: true,
@@ -13,8 +15,8 @@ export const config: Options.Testrunner = {
             transpileOnly: true
         }
     },
-    baseUrl:'https://services.petsmart.com',
-    
+    baseUrl: 'https://services.petsmart.com',
+
     //
     // ==================
     // Specify Test Files
@@ -60,7 +62,13 @@ export const config: Options.Testrunner = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        browserName: 'chrome'
+        browserName: 'Chrome',
+        browserVersion: '126',
+        "LT:Options": {
+            project: "WebdriverIOproject",
+            build: 'WebdriverIOproject',
+        }
+
     }],
 
     //
@@ -119,7 +127,7 @@ export const config: Options.Testrunner = {
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
     framework: 'mocha',
-    
+
     //
     // The number of times to retry the entire specfile when it fails as a whole
     // specFileRetries: 1,
