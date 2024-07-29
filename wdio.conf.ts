@@ -5,8 +5,8 @@ export const config: Options.Testrunner = {
     // Runner Configuration
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
-    // user: 'tanmoy22chowdhury',
-    // key: 'LT02eKkyC2xEKfgef4KksVdYqMiMZbQGywnZSB29rZ7WkWE2Ld',
+    user: 'tanmoy22chowdhury',
+    key: 'LT02eKkyC2xEKfgef4KksVdYqMiMZbQGywnZSB29rZ7WkWE2Ld',
     runner: 'local',
     autoCompileOpts: {
         autoCompile: true,
@@ -63,11 +63,11 @@ export const config: Options.Testrunner = {
     //
     capabilities: [{
         browserName: 'Chrome',
-        // browserVersion: '126',
-        // "LT:Options": {
-        //     project: "WebdriverIOproject",
-        //     build: 'WebdriverIOproject',
-        // }
+        browserVersion: '126',
+        "LT:Options": {
+            project: "WebdriverIOproject",
+            build: 'WebdriverIOproject',
+        }
 
     }],
 
