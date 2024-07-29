@@ -4,25 +4,16 @@ import { LandingPage } from '../pageobjects/landingpage.ts'
 
 
 describe('Login feature', () => {
-    let lpage:LandingPage;
-    before('Page object creation',async()=>{
-         
+    let lpage: LandingPage;
+    before('Page object creation', async () => {
+        lpage = new LandingPage(browser);
     })
-    beforeEach('page creation',async()=>{
-       await  browser.url('/');
-       await  browser.waitUntil(
-            () => browser.execute(() => document.readyState === 'complete'),
-            {
-              timeout: 60 * 1000, // 60 seconds
-              timeoutMsg: 'Page reload delayed'
-            }
-          )
-   })
-    
+    beforeEach('page creation', async function () {
+        await browser.url('/');
+    })
 
-    it('should login with valid credential', async () => {
-     lpage= new LandingPage(browser);
-    await lpage.clickloginlink()
+    it('should login with valid credential', async function () {
+        await lpage.loginwithvalidcreds();
     })
 })
 
