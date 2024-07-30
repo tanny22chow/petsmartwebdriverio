@@ -44,5 +44,6 @@ steps:
         set user=$(lbt-user)
         set key =$(lbt-key)
     fi
-    execenv=${{parameters.execenv}} npm run ${{ parameters.execcloud }}
+    echo $(user)
+   user=$(user) key=$(key) execenv=${{parameters.execenv}} npm run ${{ parameters.execcloud }}
   displayName: 'test execution'
