@@ -5,8 +5,8 @@ export const config: Options.Testrunner = {
     // Runner Configuration
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
-    user: 'tanmoy22chowdhury',
-    key: 'LT02eKkyC2xEKfgef4KksVdYqMiMZbQGywnZSB29rZ7WkWE2Ld',
+    user: 'tanmoychowdhury2',
+    key: '2YRJB9ASJeRXWjqwJ5u9',
     runner: 'local',
     autoCompileOpts: {
         autoCompile: true,
@@ -16,6 +16,13 @@ export const config: Options.Testrunner = {
         }
     },
     baseUrl: 'https://services.petsmart.com',
+    hostname: 'hub.browserstack.com',
+    services: [
+        [
+            'browserstack',
+            { browserstackLocal: false, opts: { forceLocal: false } },
+        ],
+    ],
 
     //
     // ==================
@@ -61,15 +68,24 @@ export const config: Options.Testrunner = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        browserName: 'Chrome',
-        browserVersion: '126',
-        "LT:Options": {
-            project: "WebdriverIOproject",
-            build: 'WebdriverIOproject',
+    capabilities: [
+        {
+            browserName: 'Chrome',
+            'bstack:options': {
+                browserVersion: '126.0',
+                os: 'Windows',
+                osVersion: '11',
+                projectName:'petsmartwebdriverioproject',
+                buildName: 'bstack-demo',
+                networkLogs: true,
+                 consoleLogs: 'info'
+
+                
+            }
         }
 
-    }],
+    ],
+
 
     //
     // ===================

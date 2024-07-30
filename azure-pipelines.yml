@@ -16,6 +16,7 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
+    sudo snap install chromium
     npm install
     npm run wdio 
   displayName: 'npm install and build'
