@@ -16,7 +16,9 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    sudo snap install chromium
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    sudo dpkg -i ./google-chrome*.deb
+    sudo apt-get install -f
     npm install
     npm run local-run
   displayName: 'npm install and build'
