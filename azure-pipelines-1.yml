@@ -9,9 +9,9 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-steps:
+steps: 
 - bash: |
-    if [ $secret_st = "secret string" ]; then
+    if [ $(SECRET_ST) = "secret string" ]; then
         echo "Strings are equal."
     else
         echo "Strings are not equal."
@@ -19,3 +19,4 @@ steps:
   displayName: 'npm install and build'
   env:
     secret_st: $(secret)
+  
