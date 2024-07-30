@@ -38,4 +38,4 @@ steps:
 - script: |
     npm install
     execenv=${{parameters.execenv}} npm run ${{ parameters.execcloud }}
-  displayName: 'npm install and build'
+  displayName: 'test execution'
