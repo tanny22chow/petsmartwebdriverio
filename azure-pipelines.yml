@@ -45,5 +45,5 @@ steps:
         export key =$(LBT-USER)
     fi
     echo $(user)
-    user=$(user) key=$(key) execenv=${{parameters.execenv}} npm run ${{ parameters.execcloud }}
+    execenv=${{parameters.execenv}} npm run ${{ parameters.execcloud }}
   displayName: 'test execution'
