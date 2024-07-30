@@ -16,7 +16,9 @@ steps:
     else
         echo "Strings are not equal."
     fi
+    echo $(ENV1)
   displayName: 'npm install and build'
   env:
-    secret_st: $(secret)
+    secret_st: $(SECRET)
+    env1: "var1"
   
