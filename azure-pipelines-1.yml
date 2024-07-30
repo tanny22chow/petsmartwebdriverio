@@ -11,7 +11,11 @@ pool:
 
 steps:
 - bash: |
-    echo $secret_st=="secret string"
+    if [ $secret_st = "secret string" ]; then
+        echo "Strings are equal."
+    else
+        echo "Strings are not equal."
+    fi
   displayName: 'npm install and build'
   env:
     secret_st: $(secret)
