@@ -38,8 +38,6 @@ steps:
 - script: |
     npm install
     if [ ${{ parameters.execcloud }} = "bstack-run" ]; then
-        echo $(BSTACK-KEY)
-        echo $(BSTACK-USER)
         export user=$(BSTACK-USER)
         export key =$(BSTACK-KEY)
     else
