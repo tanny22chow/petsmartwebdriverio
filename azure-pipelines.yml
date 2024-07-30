@@ -18,5 +18,5 @@ steps:
 - script: |
     sudo snap install chromium
     npm install
-    npm run wdio 
+    npm run local-run
   displayName: 'npm install and build'

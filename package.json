@@ -11,6 +11,7 @@
     "typescript": "^5.5.4"
   },
   "scripts": {
-    "wdio": "npx wdio run ./wdio.conf.ts"
+    "local-run": "npx wdio run ./test/configs/base.conf.ts",
+    "bstack-run": "npx wdio run ./test/configs/wdio.conf.ts"
   }
 }
