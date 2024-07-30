@@ -38,20 +38,20 @@ steps:
 - bash: |
     npm install
     if [ ${{ parameters.execcloud }} = "bstack-run" ]; then
-        export user=$(bs-user)
-        export key =$(bs-key)
+        export user="$bs-user"
+        export key ="$bs-key"
     else
-        export user=$(lbt-user)
-        export key =$(lbt-key)
+        export user="$lbt-user"
+        export key ="$lbt-key"
     fi
-    echo $(user)
-    user=$(user) key=$(key) execenv=${{parameters.execenv}} npm run ${{ parameters.execcloud }}
+    echo $user
+    user=$user key=$key execenv=${{parameters.execenv}} npm run ${{ parameters.execcloud }}
   displayName: 'test execution'
   env:
-    bs-user: $(bstack-user)
-    bs-key: $(bstack-key)
-    lbt-user: $(lbt-user)
-    lbt-key: $(lbt-key)
+    bs-user: $(BSTACK-USER)
+    bs-key: $(BSTACK-KEY)
+    lbt-user: $(LBT-USER)
+    lbt-key: $(LBT-KEY)
 
   
    
