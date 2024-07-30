@@ -38,11 +38,13 @@ steps:
 - script: |
     npm install
     if [ ${{ parameters.execcloud }} = "bstack-run" ]; then
-        set user=$(bstack-user)
-        set key =$(bstack-key)
+        echo $(bstack-user)
+        echo $(bstack-key)
+        export user=$(bstack-user)
+        export key =$(bstack-key)
     else
-        set user=$(lbt-user)
-        set key =$(lbt-key)
+        export user=$(lbt-user)
+        export key =$(lbt-key)
     fi
     echo $(user)
    user=$(user) key=$(key) execenv=${{parameters.execenv}} npm run ${{ parameters.execcloud }}
