@@ -3,8 +3,20 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
-trigger:
-- main
+parameters:
+- name: execenv
+  displayName: execenv
+  type: string
+  default: bstack-run
+  values:
+  - bstack-run
+  - lbtest-run
+
+trigger: none
+
+variables:
+- name: execenv
+  value: ${{ parameters.execenv }}
 
 pool:
   vmImage: ubuntu-latest
@@ -17,5 +29,5 @@ steps:
 
 - script: |
     npm install
-    npm run local-run
+    npm run ${{ variables.execenv }}
   displayName: 'npm install and build'
