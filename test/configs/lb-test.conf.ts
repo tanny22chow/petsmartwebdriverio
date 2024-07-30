@@ -6,8 +6,8 @@ export const config: Options.Testrunner = {
     // Runner Configuration
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
-    user: 'tanmoy22chowdhury',
-    key: 'LT02eKkyC2xEKfgef4KksVdYqMiMZbQGywnZSB29rZ7WkWE2Ld',
+    user: process.env.user,
+    key: process.env.key,
     runner: 'local',
     autoCompileOpts: {
         autoCompile: true,
