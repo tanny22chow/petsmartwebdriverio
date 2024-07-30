@@ -11,7 +11,7 @@ pool:
 
 steps:
 - bash: |
-    echo "$secret_st"
+    echo $(secret_st)
   displayName: 'npm install and build'
   env:
     secret_st: $(secret)
