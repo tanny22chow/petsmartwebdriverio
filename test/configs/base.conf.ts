@@ -24,7 +24,8 @@ export const config: Options.Testrunner = {
     //
     capabilities: [
         {
-            browserName: 'Chrome'
+            browserName: 'Chrome',
+            browserVersion:'126'
 
         }
 
