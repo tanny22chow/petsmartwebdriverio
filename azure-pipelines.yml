@@ -48,10 +48,10 @@ steps:
     execenv=${{parameters.execenv}} npm run ${{ parameters.execcloud }}
   displayName: 'test execution'
   env:
-    bs-user: $(BSTACK-USER)
-    bs-key: $(BSTACK-KEY)
-    lbt-user: $(LBT-USER)
-    lbt-key: $(LBT-KEY)
+    bs-user: $(bstack-user)
+    bs-key: $(bstack-key)
+    lbt-user: $(lbt-user)
+    lbt-key: $(lbt-key)
 
   
    
