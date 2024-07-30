@@ -11,9 +11,10 @@ pool:
 
 steps: 
 - bash: |
-    echo "$env:env2"
-    echo "$env:env1"
-    if [ $(env:secret_st) = "secret string" ]; then
+    echo "$env2"
+    echo "$env1"
+    echo "$secret_st"
+    if [ $secret_st = "secret string" ]; then
         echo "Strings are equal."
     else
         echo "Strings are not equal."
