@@ -4,19 +4,27 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 parameters:
-- name: execenv
-  displayName: execenv
+- name: execcloud
+  displayName: execcloud
   type: string
   default: bstack-run
   values:
   - bstack-run
   - lbtest-run
+- name: execenv
+  displayName: execenv
+  type: string
+  default: qa
+  values:
+  - qa
+  - dev
+
 
 trigger: none
 
 variables:
-- name: execenv
-  value: ${{ parameters.execenv }}
+- name: execcloud
+  value: ${{ parameters.execcloud }}
 
 pool:
   vmImage: ubuntu-latest
@@ -29,5 +37,5 @@ steps:
 
 - script: |
     npm install
-    npm run ${{ variables.execenv }}
+    execenv=${{parameters.execenv}} npm run ${{ parameters.execcloud }}
   displayName: 'npm install and build'
