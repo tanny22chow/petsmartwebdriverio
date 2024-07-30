@@ -1,12 +1,13 @@
 import type { Options } from '@wdio/types'
+import {environments} from './environments.ts'
 export const config: Options.Testrunner = {
     //
     // ====================
     // Runner Configuration
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
-    user: 'tanmoychowdhury2',
-    key: '2YRJB9ASJeRXWjqwJ5u9',
+    user: 'tanmoy22chowdhury',
+    key: 'LT02eKkyC2xEKfgef4KksVdYqMiMZbQGywnZSB29rZ7WkWE2Ld',
     runner: 'local',
     autoCompileOpts: {
         autoCompile: true,
@@ -15,14 +16,9 @@ export const config: Options.Testrunner = {
             transpileOnly: true
         }
     },
-    baseUrl: 'https://services.petsmart.com',
-    hostname: 'hub.browserstack.com',
-    services: [
-        [
-            'browserstack',
-            { browserstackLocal: false, opts: { forceLocal: false } },
-        ],
-    ],
+    baseUrl: environments[`${process.env.execenv}`].baseurl,
+    hostname: 'hub.lambdatest.com',
+    
 
     //
     // ==================
@@ -40,7 +36,7 @@ export const config: Options.Testrunner = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './test/specs/**/*.ts'
+        '../specs/**/*.ts'
     ],
     // Patterns to exclude.
     exclude: [
@@ -71,18 +67,12 @@ export const config: Options.Testrunner = {
     capabilities: [
         {
             browserName: 'Chrome',
-            'bstack:options': {
                 browserVersion: '126.0',
                 os: 'Windows',
                 osVersion: '11',
                 projectName:'petsmartwebdriverioproject',
-                buildName: 'bstack-demo',
-                networkLogs: true,
-                 consoleLogs: 'info'
-
                 
-            }
-        }
+            }   
 
     ],
 

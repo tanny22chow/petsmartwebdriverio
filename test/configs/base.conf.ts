@@ -1,4 +1,5 @@
 import type { Options } from '@wdio/types'
+import {environments} from './environments.ts'
 export const config: Options.Testrunner = {
 
     runner: 'local',
@@ -9,7 +10,7 @@ export const config: Options.Testrunner = {
             transpileOnly: true
         }
     },
-    baseUrl: 'https://services.petsmart.com',
+    baseUrl: environments[`${process.env.execenv}`].baseurl,
 
     specs: [
         '../specs/**/*.ts'
@@ -25,7 +26,7 @@ export const config: Options.Testrunner = {
     capabilities: [
         {
             browserName: 'Chrome',
-            browserVersion:'127'
+            browserVersion:'126'
 
         }
 

@@ -12,6 +12,6 @@
   },
   "scripts": {
     "local-run": "npx wdio run ./test/configs/base.conf.ts",
-    "bstack-run": "npx wdio run ./test/configs/wdio.conf.ts"
+    "bstack-run": "npx wdio run ./test/configs/bstack.conf.ts"
   }
 }
