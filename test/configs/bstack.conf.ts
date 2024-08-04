@@ -72,6 +72,9 @@ export const config: Options.Testrunner = {
     capabilities: [
         {
             browserName: 'Chrome',
+            'goog:chromeOptions':{
+                args:['--start-fullscreen','--deny-permission-prompts']
+            },
             'bstack:options': {
                 browserVersion: '126.0',
                 os: 'Windows',
@@ -79,7 +82,7 @@ export const config: Options.Testrunner = {
                 projectName:'petsmartwebdriverioproject',
                 buildName: 'bstack-demo',
                 networkLogs: true,
-                 consoleLogs: 'info'
+                consoleLogs: 'info',
 
                 
             }
