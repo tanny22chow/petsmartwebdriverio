@@ -68,9 +68,6 @@ export const config: Options.Testrunner = {
         {
             browserName: "Chrome",
             browserVersion: "126",
-            'goog:chromeOptions':{
-                args:['--start-fullscreen','--deny-permission-prompts']
-            },
             "LT:Options":{
                 platformName:"Windows",
                 platformVersion:"11",
