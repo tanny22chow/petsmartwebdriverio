@@ -66,16 +66,18 @@ export const config: Options.Testrunner = {
     //
     capabilities: [
         {
-            browserName: 'Chrome',
+            browserName: "Chrome",
+            browserVersion: "126",
             'goog:chromeOptions':{
                 args:['--start-fullscreen','--deny-permission-prompts']
             },
-                browserVersion: '126.0',
-                os: 'Windows',
-                osVersion: '11',
-                projectName:'petsmartwebdriverioproject',
-                
-            }   
+            "LT:Options":{
+                platformName:"Windows",
+                platformVersion:"11",
+                project:"petsmartwebdriverio"
+            }
+            
+        }
 
     ],
 

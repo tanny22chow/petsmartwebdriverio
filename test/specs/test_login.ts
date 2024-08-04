@@ -16,14 +16,14 @@ describe('Login feature', () => {
 
     })
 
-    it('should login with valid credential', async function () {
+    it('selcet pet service', async function () {
         lpage = new LandingPage(browser);
         await lpage.clickgrooming()
         groomingPage = new Grooming(browser);
         await groomingPage.storeSelection()
         await groomingPage.clickbathandBrush()
         await lpage.loginwithvalidcreds();
-        // appointmentpage=new Appointmentpage(browser)
+        // appointmentpage = new Appointmentpage(browser)
         // await appointmentpage.completeApointmentBooking()
 
     })
