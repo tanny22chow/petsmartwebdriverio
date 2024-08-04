@@ -9,3 +9,4 @@ src/reports/errorShots
 src/reports/json-results
 allure-report/
 allure-results/
+.vscode

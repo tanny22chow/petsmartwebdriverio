@@ -1,5 +1,5 @@
 import type { Options } from '@wdio/types'
-import {environments} from './environments.ts'
+import { environments } from './environments.ts'
 export const config: Options.Testrunner = {
 
     runner: 'local',
@@ -11,10 +11,11 @@ export const config: Options.Testrunner = {
         }
     },
     baseUrl: environments[`${process.env.execenv}`].baseurl,
+    // execArgv: ['--inspect'],
 
     specs: [
         '../specs/**/*.ts'
-        
+
     ],
     // Patterns to exclude.
     exclude: [
@@ -26,7 +27,10 @@ export const config: Options.Testrunner = {
     capabilities: [
         {
             browserName: 'Chrome',
-            browserVersion:'126'
+            browserVersion: '126',
+            'goog:chromeOptions': {
+                args: ['--disable-geolocation'],
+            }
 
         }
 
